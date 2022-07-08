@@ -1,8 +1,29 @@
-.App {
-  text-align: center;
+.main {
+  height: 2000px;
 }
 
-.App-logo {
+.menu {
+  
+  display: flex;
+  justify-content: end;
+  margin-top: 70px;
+}
+
+a {
+  color: #fff;
+  text-decoration: unset;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  padding-top: 350px;
+
+}
+* {
+  color: #fff;
+  font-family: "Verdana";
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +56,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

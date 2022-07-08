@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Provider, connect } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { requestCharacters } from './Redux/characters-reducer';
+import { compose } from 'redux';
 import './App.css';
+import Characters from './components/Characters/Characters';
+import CharactersContainer from './components/Characters/CharactersContainer';
+import Header from './components/Header/Header';
+import Menu from './components/Header/Menu/Menu';
+import store from './Redux/redux-store';
+import Preloader from './components/common/Preloader/Preloader';
+import { withSuspense } from './hoc/withSuspense';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// const CharactersContainer = React.lazy(() => import('./components/Characters/CharactersContainer'))
+
+
+class App extends React.Component{
+
+
+  render(){
+
+    return<div >
+      <BrowserRouter>
+        <Provider store={store}>
+          <Header />
+          <div className='App'>
+          <Routes>
+            <Route path='/character/:userId?' element={<div>Character</div>} />
+              <Route path='/characters' element={<CharactersContainer />} />
+              <Route extends path='/' element={<div className="main"></div>
+              // <Preloader />
+              } />
+          </Routes>
+          </div>
+        </Provider>
+      </BrowserRouter>
     </div>
-  );
+  }
 }
 
 export default App;
