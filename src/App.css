@@ -16,8 +16,8 @@ a {
 .App {
   display: flex;
   justify-content: center;
-  padding-top: 350px;
-
+  padding-top: 50vh;
+  width: 100%;
 }
 * {
   color: #fff;

@@ -23,6 +23,9 @@ class App extends React.Component{
     return<div >
       <BrowserRouter>
         <Provider store={store}>
+          <div className='wrapper'>
+            
+          </div>
           <Header />
           <div className='App'>
           <Routes>

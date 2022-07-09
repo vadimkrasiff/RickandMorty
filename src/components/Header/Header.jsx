@@ -29,7 +29,7 @@ let Header = () => {
 
     const ref = useRef();
     useOutsideClick(ref, deactiveMenu);
-    return <header className={scroll < 230 ? "" : css.header}>
+    return <header className={scroll < 300 ? "" : css.header}>
 
         <div className={css.logo}>
 

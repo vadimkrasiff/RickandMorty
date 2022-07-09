@@ -1,16 +1,15 @@
 header {
-    height: 100%;
     position: fixed;
     display: flex;
     align-items: end;
     justify-content: space-between;
-    height: 300px;
+    height: 45%;
     width: 100%;
     font-size: 80px;
     font-weight: 800;
     transition: .2s;
     background-image: url("./../../images/icons/header.jpg");
-    background-size: 100% 700px;
+    background-size: 100vw 100vh;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0px 0px 0px rgb(60 64 67 / 15%) !important;
    
 }
@@ -19,8 +18,7 @@ header {
     position: fixed;
     display: flex;
     align-items: center;
-    height: 70px;
-    width: 100%;
+    height: 10%;
     font-size: 32px;
     font-weight: 800;
     transition: .2s;
@@ -29,38 +27,38 @@ header {
 }
 
 .logo {
-    margin-left: 1%;
-    margin-right: 2%;
+    margin-right: 2vw;
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 45vh;
     text-decoration-color: unset;
     color: #282c34;
-    padding-bottom: 20px;
     transition: .2s;
 }
 
 .header .logo {
-    margin-right: 4%;
+    margin-left: 1.5vw;
+    margin-right: 3vw;
     padding-bottom: 0px;
     transition: .2s;
 }
 
 
 .title {
+    padding-left: 16vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding-right: 0px;
     transition: .2s;
-    height: 100%;
+    height: 45vh;
 }
 
 .header .title {
+    padding-left: 0;
     padding-bottom:0px;
-    width: 100%;
     display: flex;
     justify-content: start;
     transition: .2s;
@@ -69,45 +67,47 @@ header {
 }
 
 .logo a {
-    margin-left: 60px;
+    margin-left: 3vh;
     display: flex;
     color: #000 ;
     background-image: url('./../../images/icons/Rick_and_Morty.svg');
-    background-size: 600px 200px;
-    height: 200px;
-    width: 600px;
+    background-size: 30vw 20vh;
+    height: 20vh;
+    width: 30vw;
     transition: .6s;
   }
 
 .header .logo a {
-    margin-left: 60px;
+    margin-left: 9vh;
     font-size: 32px;
     transition: .2s;
-    background-size: 200px 60px;
-    height: 60px;
-    width: 200px;
+    background-size: 14vw 9vh;
+    height: 9vh;
+    width: 14vw;
+    transition: .6s;
 }
 
 
 .button {
     filter: invert(1) opacity(.6) drop-shadow(0 0 0 #2bff00);
-    margin-top: 250px;
+    margin-top: 30vh;
     cursor: pointer;
-    height: 64px;
-    width: 64px;
+    height: 10vh;
+    width: 5vw;
     background-image: url('./../../images/icons/menu.png');
-    background-size: 64px 64px;
+    background-size: 5vw 10vh;
     background-clip: border-box;
     transform:rotate(-360deg);
-    transition: .2s;
+    transition: .6s;
 }
 
 .header .button {
-    height: 50px;
-    width: 50px;
+    height: 7vh;
+    width: 3.5vw;
     background-image: url('./../../images/icons/menu.png');
-    background-size: 50px 50px;
+    background-size: 3.5vw 7vh;
     margin-top: 0;
+    transition: .2s;
 }
 
 .header .close_button {
@@ -117,21 +117,21 @@ header {
 .close_button {
     
     filter: invert(1) opacity(.6) drop-shadow(0 0 0 #2bff00);
-    margin-top: 250px;
+    margin-top: 300px;
     cursor: pointer;
-    height: 64px;
-    width: 64px;
+    height: 10vh;
+    width: 5vw;
     background-image: url('./../../images/icons/close_icon.png');
-    background-size: 64px 64px;
+    background-size: 5vw 10vh;
     background-position: center;
     transition: .4s;
 }
 
 .header .close_button {
-    height: 50px;
-    width: 50px;
+    height: 8vh;
+    width: 4vw;
     transition: .2s;
     background-image: url('./../../images/icons/close_icon.png');
-    background-size: 50px 50px;
+    background-size: 4vw 8vh;
     margin-top: 0;
 }
