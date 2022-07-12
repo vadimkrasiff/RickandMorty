@@ -3,13 +3,13 @@ header {
     display: flex;
     align-items: end;
     justify-content: space-between;
-    height: 45%;
+    height: 50%;
     width: 100%;
     font-size: 80px;
     font-weight: 800;
     transition: .2s;
     background-image: url("./../../images/icons/header.jpg");
-    background-size: 100vw 100vh;
+    background-size: 100vw 115vh;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0px 0px 0px rgb(60 64 67 / 15%) !important;
    
 }
@@ -18,7 +18,7 @@ header {
     position: fixed;
     display: flex;
     align-items: center;
-    height: 10%;
+    height: 12%;
     font-size: 32px;
     font-weight: 800;
     transition: .2s;
@@ -34,6 +34,7 @@ header {
     height: 45vh;
     text-decoration-color: unset;
     color: #282c34;
+
     transition: .2s;
 }
 
@@ -46,11 +47,12 @@ header {
 
 
 .title {
-    padding-left: 16vh;
+    padding-left: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-bottom: 12vh;
     padding-right: 0px;
     transition: .2s;
     height: 45vh;
@@ -58,7 +60,7 @@ header {
 
 .header .title {
     padding-left: 0;
-    padding-bottom:0px;
+    padding-bottom: 0;
     display: flex;
     justify-content: start;
     transition: .2s;
@@ -67,13 +69,11 @@ header {
 }
 
 .logo a {
-    margin-left: 3vh;
     display: flex;
-    color: #000 ;
     background-image: url('./../../images/icons/Rick_and_Morty.svg');
-    background-size: 30vw 20vh;
-    height: 20vh;
-    width: 30vw;
+    background-size: 45vw 35vh;
+    height: 35vh;
+    width: 45vw;
     transition: .6s;
   }
 
@@ -81,9 +81,9 @@ header {
     margin-left: 9vh;
     font-size: 32px;
     transition: .2s;
-    background-size: 14vw 9vh;
-    height: 9vh;
-    width: 14vw;
+    background-size: 15vw 10vh;
+    height: 10vh;
+    width: 15vw;
     transition: .6s;
 }
 
@@ -92,20 +92,20 @@ header {
     filter: invert(1) opacity(.6) drop-shadow(0 0 0 #2bff00);
     margin-top: 30vh;
     cursor: pointer;
-    height: 10vh;
+    height: 11vh;
     width: 5vw;
     background-image: url('./../../images/icons/menu.png');
-    background-size: 5vw 10vh;
+    background-size: 5vw 11vh;
     background-clip: border-box;
     transform:rotate(-360deg);
     transition: .6s;
 }
 
 .header .button {
-    height: 7vh;
+    height: 8vh;
     width: 3.5vw;
     background-image: url('./../../images/icons/menu.png');
-    background-size: 3.5vw 7vh;
+    background-size: 3.5vw 8vh;
     margin-top: 0;
     transition: .2s;
 }
@@ -117,21 +117,21 @@ header {
 .close_button {
     
     filter: invert(1) opacity(.6) drop-shadow(0 0 0 #2bff00);
-    margin-top: 300px;
+    margin-top: 30vh;
     cursor: pointer;
-    height: 10vh;
+    height: 11vh;
     width: 5vw;
     background-image: url('./../../images/icons/close_icon.png');
-    background-size: 5vw 10vh;
+    background-size: 5vw 11vh;
     background-position: center;
     transition: .4s;
 }
 
 .header .close_button {
     height: 8vh;
-    width: 4vw;
+    width: 3.5vw;
     transition: .2s;
     background-image: url('./../../images/icons/close_icon.png');
-    background-size: 4vw 8vh;
+    background-size: 3.5vw 8vh;
     margin-top: 0;
 }

@@ -16,7 +16,7 @@ a {
 .App {
   display: flex;
   justify-content: center;
-  padding-top: 50vh;
+  padding-top: 65vh;
   width: 100%;
 }
 * {
