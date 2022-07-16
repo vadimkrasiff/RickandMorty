@@ -17,19 +17,42 @@ import { withSuspense } from './hoc/withSuspense';
 
 class App extends React.Component {
 
-
   render() {
+    // let arrCat = [cat, cat];
 
+    // let cat = () => {
+    //   {
+    //     for (; i < 3; i++) {
+    //       console.log(i);
+    //       return 
+    //     }
+    //   }
+    // }
     return <div >
       <BrowserRouter>
-          <div className='wrap'>
-            <div className='wrapper'>
-            <div className="cat">
-            </div>
-            </div>
+        <div className='wrap'>
+          {/* {arrCat.map(item => (
+            <div>{item.}</div>
+          ))} */}
+
+          <div className='wrapper'>
+              <div className="cat">
+              </div>
+              <div className="cat">
+              </div>
+            
+            {/* <div className='doubleCat'>
+              <div className="cat">
+              </div>
+              <div className="cat">
+              </div>
+            </div> */}
+            
+          </div>
         </div>
         <Provider store={store}>
           <Header />
+
           <div className='App'>
             <Routes>
               <Route path='/character/:userId?' element={<div>Character</div>} />
