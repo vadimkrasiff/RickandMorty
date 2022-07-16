@@ -15,26 +15,29 @@ import { withSuspense } from './hoc/withSuspense';
 // const CharactersContainer = React.lazy(() => import('./components/Characters/CharactersContainer'))
 
 
-class App extends React.Component{
+class App extends React.Component {
 
 
-  render(){
+  render() {
 
-    return<div >
+    return <div >
       <BrowserRouter>
+          <div className='wrap'>
+            <div className='wrapper'>
+            <div className="cat">
+            </div>
+            </div>
+        </div>
         <Provider store={store}>
-          <div className='wrapper'>
-            
-          </div>
           <Header />
           <div className='App'>
-          <Routes>
-            <Route path='/character/:userId?' element={<div>Character</div>} />
+            <Routes>
+              <Route path='/character/:userId?' element={<div>Character</div>} />
               <Route path='/characters' element={<CharactersContainer />} />
               <Route extends path='/' element={<div className="main"></div>
-              // <Preloader />
+                // <Preloader />
               } />
-          </Routes>
+            </Routes>
           </div>
         </Provider>
       </BrowserRouter>
