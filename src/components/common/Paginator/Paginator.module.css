@@ -1,0 +1,57 @@
+.paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.numPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    padding: 5px;
+    margin-left: 2px;    
+    width: 25px;
+    transition: .2s;
+    border-radius: 3px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.507), 0 0 5px rgba(0, 0, 0, 0.473);
+}
+.numPage:hover {
+    background-color: #BFDE42;
+
+    box-shadow:  0 0 3px rgba(0, 0, 0, 0.507), 0 0 5px rgba(0, 0, 0, 0.507);
+}
+.numPage:active {
+    background-color: #42B4CA;
+}
+
+.activePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    padding: 5px;    
+    width: 25px;
+    background-color: #42B4CA;
+    border-radius: 3px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.26), 0 0 4px rgba(0, 0, 0, 0.26);
+    box-shadow:  0 0 3px rgba(0, 0, 0, 0.507), 0 0 5px rgba(0, 0, 0, 0.507);
+}
+
+button {
+    cursor: pointer;
+    background-color: #BFDE42;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 3px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.26), 0 0 4px rgba(0, 0, 0, 0.26);
+    box-shadow:  0 0 3px rgba(0, 0, 0, 0.507), 0 0 5px rgba(0, 0, 0, 0.507);
+}
+button:active {
+    background-color: #42B4CA;
+}

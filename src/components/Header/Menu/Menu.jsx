@@ -10,7 +10,7 @@ let Menu = ({ openMenu, scroll }) => {
             <NavLink to={"/characters"}>
                 <div className={css.a}>Characters</div>
             </NavLink>
-            <NavLink to={"/characters"}>
+            <NavLink to={"/locations"}>
                 <div className={css.a}>Location</div>
             </NavLink>
             <NavLink to={"/characters"}>

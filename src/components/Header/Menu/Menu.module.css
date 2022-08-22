@@ -2,10 +2,11 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    height: 100ch;
+    backdrop-filter: blur(5px);
+    height: 100vh;
     width: 0px;
     font-size: 20px;
-    background-color: rgb(68, 68, 78);
+    background-color: #1a1c20f1;
     transition: .4s;
     font-weight: 300 !important;
     
@@ -15,13 +16,14 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    height: 100ch;
+    height: 100vh;
     width: 25%;
-    background-color: #3C3E44;
-    font-size: 18px; 
-    font-weight: 400;
+    background-color: #1a1c20f5;
+    /* background-color: rgba(12, 12, 12, 0.959); */
+    font-size: 1.4rem; 
+    font-weight: 500;
     transition: .4s;
-    box-shadow: 0px 0px 0px 0 rgb(60 64 67 / 15%), 0 3px 3px 0 rgba(60, 62, 65, 0.3) !important;
+    box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.274), 0 3px 3px 0 rgba(0, 0, 0, 0.418) !important;
 }
 
 a {
@@ -33,5 +35,5 @@ a {
     align-items: center;
 }
 .a:hover {
-    background-color: rgb(79, 79, 87);
+    background-color: #24262cf5;
 }

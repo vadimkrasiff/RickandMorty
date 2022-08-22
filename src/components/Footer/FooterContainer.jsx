@@ -1,0 +1,32 @@
+import React from "react";
+import { connect } from "react-redux";
+import { compose } from "redux";
+import Footer from "./Footer";
+import { getIsFetching, getTotalCharactersCount, getTotalEpisodesCount, getTotalLocationsCount} from '../../Redux/footer-selectors';
+import { requestFooter } from "../../Redux/footer-reducer";
+import { useEffect } from "react";
+
+let FooterContainer = (props) => {
+
+    return <div>
+        {props.isFetching || props.locationsCount == null ? null :
+                <Footer locationsCount={props.locationsCount}
+                charactersCount={props.charactersCount}
+                episodesCount={props.episodesCount} />
+        }
+    </div>
+}
+
+let mapStateToProps = (state) => {
+    return {
+        isFetching: getIsFetching(state),
+        locationsCount: getTotalLocationsCount(state),
+        charactersCount: getTotalCharactersCount(state),
+        episodesCount: getTotalEpisodesCount(state),
+    }
+}
+
+export default compose(
+    connect(mapStateToProps,
+        requestFooter)
+)(FooterContainer);

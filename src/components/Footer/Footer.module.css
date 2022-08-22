@@ -1,0 +1,32 @@
+.footer {
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .9rem;
+}
+.footer div {
+    color: rgb(158, 158, 158) ;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.infoData {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+}
+
+.links a {
+    transition: .2s;
+}
+
+.links a:hover {
+    color: rgb(255, 152, 0);
+}

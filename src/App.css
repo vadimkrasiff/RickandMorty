@@ -1,12 +1,15 @@
 .main {
-  height: 2000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
-  
   display: flex;
   justify-content: end;
-  margin-top: 70px;
+  margin-top: 12vh;
 }
 
 a {
@@ -14,79 +17,27 @@ a {
   text-decoration: unset;
 }
 .App {
+  padding-top: 50vh;
+  /* background-color: red; */
+  height: 50vh;
   display: flex;
-  justify-content: center;
-  padding-top: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  /* background-color: red; */
 }
 * {
   color: #fff;
   font-family: "Verdana";
 }
-
-.cat {
-  height: 200px;
-  width: 200px;
-  background-image: url("/src/images/background/cat.svg");
-  background-size: 200px 200px;
-  /* background-color: blue; */
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .cat {
-    animation: cat-spin infinite 7s linear;
-  }
-}
-
-@keyframes cat-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.wrap {
-  margin-top: 3%;
-  position: fixed;
-  width:100%;
-  height: 100%;
+footer {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.wrapper {
-  display: flex;
-  /* position: fixed; */
-  width: 40%;
-  height: 22%;
-  /* flex-direction: column;  */
-  justify-content:space-between;
-  /* background-color: red; */
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .wrapper {
-    animation: wrapper-spin infinite 8s linear;
-  }
-}
-
-@keyframes wrapper-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} 
-
-.doubleCat {
-  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 50px;
   height: 200px;
-  display: flex;
-  /* justify-content: space-between; */
-  /* background-color: orange; */
 }

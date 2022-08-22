@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Provider, connect } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { requestCharacters } from './Redux/characters-reducer';
 import { compose } from 'redux';
 import './App.css';
-import Characters from './components/Characters/Characters';
 import CharactersContainer from './components/Characters/CharactersContainer';
 import Header from './components/Header/Header';
-import Menu from './components/Header/Menu/Menu';
 import store from './Redux/redux-store';
 import Preloader from './components/common/Preloader/Preloader';
 import { withSuspense } from './hoc/withSuspense';
+// import Cats from './components/Cats/Cats';
+import CharacterContainer from './components/Character/CharacterContainer';
+import FooterContainer from './components/Footer/FooterContainer';
+import LocationsContainer from './components/Locations/LocationsContainer';
 
 // const CharactersContainer = React.lazy(() => import('./components/Characters/CharactersContainer'))
 
@@ -18,51 +20,30 @@ import { withSuspense } from './hoc/withSuspense';
 class App extends React.Component {
 
   render() {
-    // let arrCat = [cat, cat];
-
-    // let cat = () => {
-    //   {
-    //     for (; i < 3; i++) {
-    //       console.log(i);
-    //       return 
-    //     }
-    //   }
-    // }
-    return <div >
+    return <div>
       <BrowserRouter>
-        <div className='wrap'>
-          {/* {arrCat.map(item => (
-            <div>{item.}</div>
-          ))} */}
-
-          <div className='wrapper'>
-              <div className="cat">
-              </div>
-              <div className="cat">
-              </div>
-            
-            {/* <div className='doubleCat'>
-              <div className="cat">
-              </div>
-              <div className="cat">
-              </div>
-            </div> */}
-            
-          </div>
-        </div>
+        {/* <Cats  /> */}
         <Provider store={store}>
-          <Header />
 
+        <Header />
           <div className='App'>
-            <Routes>
-              <Route path='/character/:userId?' element={<div>Character</div>} />
-              <Route path='/characters' element={<CharactersContainer />} />
-              <Route extends path='/' element={<div className="main"></div>
-                // <Preloader />
-              } />
-            </Routes>
+              <Routes>
+                <Route path='/character/:id' element={<div><CharacterContainer /> </div>} />
+                <Route path='/characters&page=:currentPage' element={<div><CharactersContainer /></div>} />
+                <Route path='/locations&page=:currentPage' element={<div><LocationsContainer /></div>} />
+                <Route extends path='/locations' element={<Navigate to='/locations&page=1' replace />} />
+                <Route extends path='/characters' element={<Navigate to='/characters&page=1' replace />} />
+                <Route extends path='/' element={<div className="main">
+                  <Preloader />
+                </div>
+                } />
+              </Routes>
+              <footer>
+              <FooterContainer />
+            </footer>
           </div>
         </Provider>
+
       </BrowserRouter>
     </div>
   }

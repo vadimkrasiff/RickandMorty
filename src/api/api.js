@@ -5,21 +5,31 @@ const instance = axios.create({
 })
 
 export const charactersAPI = {
-    async getCharacters() {
+    async getCharacters(currentPage = 1) {
         // try{
-            return instance.get(`character?page=1`)
+            return instance.get(`character?page=${currentPage}`)
             .then(response => {
                 return response.data;
             })
         // } catch (err) {
         //     return charactersData;
         // }
+    },
+    getCharacter (id) {
+        return characterAPI.getCharacter(id);
     }
 }
 
-export const locationAPI = {
-    async getLocation (number=1) {
-        return instance.get(`location?page=${number}`)
+export const characterAPI = {
+    async getCharacter (id) {
+        const response = await instance.get(`character/` + id);
+        return response.data;
+    }
+}
+
+export const locationsAPI = {
+    async getLocation (currentPage=1) {
+        return instance.get(`location?page=${currentPage}`)
         .then(response => {
             return response.data;
         })
