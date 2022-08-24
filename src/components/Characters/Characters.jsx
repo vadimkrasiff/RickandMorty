@@ -34,7 +34,7 @@ let Characters = ({ characters, totalPagesCount, onPageChanged, currentPage, nam
                             <div className={css.type}>
                                 <span className={css.textGray}>Type: </span>
                                 {chr.type}
-                                {chr.type === "" && <span> none</span>}</div>
+                                {chr.type === "" && <span> None</span>}</div>
                             <div className={css.textBlock}>
                                 <span className={css.textGray}>Gender: </span>
                                 {chr.gender}

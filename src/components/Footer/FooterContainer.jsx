@@ -4,7 +4,6 @@ import { compose } from "redux";
 import Footer from "./Footer";
 import { getIsFetching, getTotalCharactersCount, getTotalEpisodesCount, getTotalLocationsCount} from '../../Redux/footer-selectors';
 import { requestFooter } from "../../Redux/footer-reducer";
-import { useEffect } from "react";
 
 let FooterContainer = (props) => {
 

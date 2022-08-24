@@ -11,10 +11,6 @@ export const getTotalCharactersCount = (state) => {
 };
 
 
-export const getCurrentPage = (state) => {
-    return state.characters.currentPage;
-};
-
 
 export const getIsFetching = (state) => {
     return state.characters.isFetching;

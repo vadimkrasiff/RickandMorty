@@ -1,24 +1,24 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { compose } from 'redux';
-import { requestCharacters } from '../../Redux/characters-reducer';
-import { getCharacters, getIsFetching, getNamePage, getTotalPagesCount } from '../../Redux/characters-selectors';
+import { getCurrentPage, getIsFetching, getEpisodes, getNamePage, getTotalPagesCount } from '../../Redux/episodes-selectors';
 import Preloader from '../common/Preloader/Preloader';
-import Characters from './Characters';
+import Episodes from './Episodes';
 import { useParams } from "react-router-dom";
-import css from "./Characters.module.css"
+import css from "./Episodes.module.css"
 import { useEffect } from 'react';
+import { requestEpisodes } from '../../Redux/episodes-reducer';
 
-let CharactersContainer = (props) => {
+let EpisodesContainer = (props) => {
 
     const { currentPage } = useParams();
     useEffect(() => {
-        props.getCharacters(currentPage)
+        props.requestEpisodes(currentPage)
     }, [currentPage])
 
         return <div className={css.container}>
-            {props.characters == null || props.isFetching ? <Preloader /> :
-                    <Characters characters={props.characters}
+            {props.episodes == null || props.isFetching ? <Preloader /> :
+                    <Episodes episodes={props.episodes}
                         totalPagesCount={props.totalPagesCount}
                         currentPage={props.currentPage}
                         namePage={props.namePage} />
@@ -26,16 +26,17 @@ let CharactersContainer = (props) => {
         </div>
     }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state) =>  {
     return {
-        characters: getCharacters(state),
+        episodes: getEpisodes(state),
         isFetching: getIsFetching(state),
         totalPagesCount: getTotalPagesCount(state),
+        currentPage: getCurrentPage(state),
         namePage: getNamePage(state),
     }
 };
 
 export default compose(
     connect(mapStateToProps,
-        { getCharacters: requestCharacters })
-)(CharactersContainer);
+        { requestEpisodes })
+)(EpisodesContainer);

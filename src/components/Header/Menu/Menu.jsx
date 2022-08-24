@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import css from "./Menu.module.css";
 
@@ -13,7 +13,7 @@ let Menu = ({ openMenu, scroll }) => {
             <NavLink to={"/locations"}>
                 <div className={css.a}>Location</div>
             </NavLink>
-            <NavLink to={"/characters"}>
+            <NavLink to={"/episodes"}>
                 <div className={css.a}>Episode</div>
             </NavLink>
         </div>

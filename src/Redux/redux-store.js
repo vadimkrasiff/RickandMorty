@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, compose, legacy_createStore as create
 import thunkMiddleware from "redux-thunk";
 import characterReducer from "./character-reducer";
 import charactersReducers from "./characters-reducer";
+import episodesReducer from "./episodes-reducer";
 import FooterReducer from "./footer-reducer";
 import locationsReducer from "./locations-reducer";
 
@@ -10,7 +11,8 @@ let reducers = combineReducers({
     characters: charactersReducers,
     character: characterReducer,
     locations: locationsReducer,
-    footer: FooterReducer
+    footer: FooterReducer,
+    episodes: episodesReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; 

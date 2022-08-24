@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import Paginator from "../common/Paginator/Paginator";
 import css from "./Locations.module.css"
 
@@ -9,7 +8,7 @@ let Locations = ({ locations, totalPagesCount, onPageChanged, currentPage, nameP
 
         <div className={css.results}>
             {locations.map(loc => {
-                return <div className={css.character} key={loc.id}>
+                return <div className={css.location} key={loc.id}>
                     <div
                     // style={{
                     //     backgroundImage: `url(${chr.image})`,
@@ -20,9 +19,9 @@ let Locations = ({ locations, totalPagesCount, onPageChanged, currentPage, nameP
                     // }}
                     >
                         <div className={css.firstInfo}>
-                            <NavLink to={'/character/' + loc.id} >
+                            <a href={loc.url} >
                                 <span className={css.name}>{loc.name}</span>
-                            </NavLink>
+                            </a>
                         </div>
                     </div>
                     <div className={css.info}>
@@ -30,10 +29,11 @@ let Locations = ({ locations, totalPagesCount, onPageChanged, currentPage, nameP
                             <div className={css.type}>
                                 <span className={css.textGray}>Type: </span>
                                 {loc.type}
-                                {loc.type === "" && <span> none</span>}</div>
+                                </div>
                             <div className={css.textBlock}>
                                 <span className={css.textGray}>Dimension: </span>
                                 {loc.dimension}
+                                {loc.dimension === "" && <span> None</span>}
                             </div>
                         </div>
                     </div>
