@@ -1,10 +1,10 @@
 .character {
     margin-top: 10vh;
     width: 1280px;
-    height: 600px;
+    height: 550px;
     display: flex;
     justify-content: space-between;
-    background-color: #3C3E44;
+    /* background-color: #3C3E44; */
     border-radius: 10px;
     /* background-color: red; */
 }
@@ -12,14 +12,16 @@
 .leftInfo {
     display: flex;
     flex-direction: column;
-
+    background-color: #3C3E44;
     width: 300px;
+    border-radius: 10px;
 }
 
 .rightInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    width: 930px;
+    background-color: #3C3E44;
+    width: 950px;
+    border-radius: 10px;
 }

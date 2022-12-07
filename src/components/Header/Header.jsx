@@ -1,52 +1,51 @@
 import React, { useRef, useState } from 'react';
-import useOutsideClick from '../../hooks/useClickOtside';
 import css from "./Header.module.css"
-import Menu from './Menu/Menu';
 import { NavLink } from "react-router-dom";
+import Search from '../common/Search/Search';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { requestHeader } from '../../Redux/search-reducer';
+import { getCharacters, getEpisodes, getIsFetching, getLocations } from '../../Redux/search-selectors';
 
 
-let Header = () => {
+let Header = ({characters, isFetching}) => {
 
-    let [openMenu, setMenu] = useState(false);
 
-    const activeMenu = () => {
-        setMenu(!openMenu);
-    }
-
-    const deactiveMenu = () => {
-        setMenu(false);
-    }
-    const [scroll, setScroll] = useState(false);
-
-    const handleScroll = () => {
-        setScroll(window.scrollY);
-    };
-
-    React.useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const ref = useRef();
-    useOutsideClick(ref, deactiveMenu);
-    return <header className={scroll < 300 ? "" : css.header}>
-
+    return <div className={css.header}>
         <div className={css.logo}>
-
             <div className={css.title}>
                 <NavLink to={"/"}></NavLink>
             </div>
-            <div ref={ref}>
-                <div onClick={activeMenu} className={!openMenu ? css.button : css.close_button} >
+        </div>
+        <div className={css.right}>
+            <Search characters={characters} isFetching ={isFetching}/>
+            <div className={css.menu}>
+                <NavLink to={"/characters&page=1"}>
+                    <div className={css.a}>Characters</div>
+                </NavLink>
+                <NavLink to={"/locations&page=1"}>
+                    <div className={css.a}>Location</div>
+                </NavLink>
+                <NavLink to={"/episodes&page=1"}>
+                    <div className={css.a}>Episode</div>
+                </NavLink>
+                <div>
                 </div>
             </div>
         </div>
-        <div className={css.menu}>
-            <div className='menu'><Menu openMenu={openMenu} scroll={scroll} /></div>
-
-        </div>
-
-    </header>
+    </div>
 }
 
-export default Header;
+let mapStateToProps = (state) => {
+    return {
+        characters: getCharacters(state),
+        locations: getLocations(state),
+        episodies: getEpisodes(state),
+        isFetching: getIsFetching(state),
+    }
+};
+
+export default compose(
+    connect(mapStateToProps,
+        requestHeader)
+)(Header);

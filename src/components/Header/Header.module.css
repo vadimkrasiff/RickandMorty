@@ -1,65 +1,29 @@
-header {
-    position: fixed;
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    height: 50%;
-    width: 100%;
-    font-size: 80px;
-    font-weight: 800;
-    transition: .2s;
-    /* background-image: url("./../../images/icons/header.jpg"); */
-    background-color: #000b;
-    backdrop-filter: blur(5px);
-
-    background-size: 100vw 115vh;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 3, 0.274), 0 0px 0px 0px rgba(60, 64, 67, 0.308) !important;
-   
-}
-
 .header {
     position: fixed;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 12%;
-    font-size: 32px;
+    height: 110px;
+    width: 100%;
+    font-size: 25px;
     font-weight: 800;
-    transition: .2s;
-    /* background-color: #fff; */
+    background-color: #000b;
+    backdrop-filter: blur(5px);
+    background-size: 100vw 115vh;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 3, 0.274), 0 0px 0px 0px rgba(60, 64, 67, 0.308) !important;
 
 }
+
 
 .logo {
-    margin-right: 2vw;
+    padding-left: 100px;
     display: flex;
     align-items: center;
-    width: 100vw;
-    height: 45vh;
+    width: 300px;
+    height: 200px;
     text-decoration-color: unset;
     color: #282c34;
-
     transition: .2s;
-}
-
-.header .logo {
-    margin-left: 1.5vw;
-    margin-right: 3vw;
-    padding-bottom: none;
-    height: 10vh;
-    transition: .2s;
-}
-
-
-.title {
-    padding-left: 15vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    /* padding-bottom: 12vh; */
-    padding-right: 0px;
-    transition: .2s;
-    height: 45vh;
 }
 
 .header .title {
@@ -67,79 +31,75 @@ header {
     padding-bottom: 0;
     display: flex;
     justify-content: start;
+    align-items: center;
     transition: .2s;
     height: 10vh;
-
-
 }
 
-.logo a {
+.header .logo a {
     display: flex;
     background-image: url('./../../images/icons/Rick_and_Morty.svg');
-    background-size: 45vw 35vh;
-    margin-bottom: 10vh;
-    height: 35vh;
-    width: 45vw;
-    transition: .2s;
-  }
-
-.header .logo a {
-    margin-left: 9vh;
     margin-bottom: 0;
     font-size: 32px;
     transition: .2s;
-    background-size: 15vw 10vh;
-    height: 10vh;
-    width: 15vw;
+    background-size: 100% 100%;
+    height: 200px;
+    width: 300px;
     transition: .2s;
 }
 
+.right {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 1000px;
+    height: 100%;
+    padding-right: 240px;
+        margin-bottom: 40px;
+}
 
-.button {
-    filter: invert(1) opacity(1) drop-shadow(0px 0px 5px #BFDE42) drop-shadow(0px 0px 3px #42b4ca);
-    margin-top: 30vh;
+.menu {
+    display: flex;
+    width: 600px;
+    height: 100%;
+    justify-content: space-between;
+    align-items: end;
+    transition: .2s;
+}
+.search{
+    display: flex;
+    align-items: center;
+}
+.search div{
     cursor: pointer;
-    height: 11vh;
-    width: 5vw;
-    background-image: url('./../../images/icons/menu.png');
-    background-size: 100% 11vh;
-    background-clip: border-box;
-    transform:rotate(-360deg);
-    transition: .2s;
+    background-image: url('./../../images/icons/search.svg');
+    width: 30px;
+    height: 30px;
 }
-
-.header .button {
-    filter: invert(1) opacity(1) drop-shadow(0px 0px 3px #BFDE42) drop-shadow(0px 0px 0px #42b4ca);
-    height: 8vh;
-    width: 3.5vw;
-    background-image: url('./../../images/icons/menu.png');
-    background-size: 3.5vw 8vh;
-    margin-top: 0;
+.search input {
+    
+    width:100px;
+    height: 20px ;
+    font-size: 16px;
+    font-weight: 600; 
+    border: none;
     transition: .2s;
-}
+} 
 
-.header .close_button {
-    margin-top: 0;
-}
+.search input:focus-visible {
+    outline: none;
+    border-bottom:1px solid white;
+    width: 200px;
+} 
+.a {
 
-.close_button {
-    filter: invert(1) opacity(1) drop-shadow(0px 0px 5px #BFDE42) drop-shadow(0px 0px 3px #42b4ca);
-    margin-top: 30vh;
-    cursor: pointer;
-    height: 11vh;
-    width: 5vw;
-    background-image: url('./../../images/icons/close_icon.png');
-    background-size: 5vw 11vh;
-    background-position: center;
-    transition: .2s;
-}
+    display: flex;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    border: none;
+} 
 
-.header .close_button {
-    filter: invert(1) opacity(1) drop-shadow(0px 0px 3px #BFDE42) drop-shadow(0px 0px 0px #42b4ca);
-    height: 8vh;
-    width: 3.5vw;
-    transition: .2s;
-    background-image: url('./../../images/icons/close_icon.png');
-    background-size: 3.5vw 8vh;
-    margin-top: 0;
+.a:hover {
+    transition: 0.3s;
+    color: rgb(255, 152, 0);
 }

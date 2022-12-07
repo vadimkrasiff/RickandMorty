@@ -41,7 +41,6 @@ let App = () => {
           </footer>
         </div>
       </Provider>
-
     </BrowserRouter>
   </div>
 }

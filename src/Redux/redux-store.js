@@ -4,6 +4,7 @@ import characterReducer from "./character-reducer";
 import charactersReducers from "./characters-reducer";
 import episodesReducer from "./episodes-reducer";
 import FooterReducer from "./footer-reducer";
+import HeaderReducer from "./search-reducer";
 import locationsReducer from "./locations-reducer";
 
 
@@ -12,7 +13,8 @@ let reducers = combineReducers({
     character: characterReducer,
     locations: locationsReducer,
     footer: FooterReducer,
-    episodes: episodesReducer
+    header: HeaderReducer,
+    episodes: episodesReducer,
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; 

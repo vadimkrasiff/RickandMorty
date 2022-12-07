@@ -44,3 +44,22 @@ export const episodeAPI = {
         })
     }
 }
+
+export const SearchAPI = {
+    async getCharacters () {
+        const response = await instance.get(`character`);
+        return response.data;
+    },
+    async getLocations () {
+        return instance.get(`location`)
+        .then(response => {
+            return response.data;
+        })
+    },
+    async getEpisodes () {
+        return instance.get(`episode`)
+        .then(response => {
+            return response.data;
+        })
+    }
+}
