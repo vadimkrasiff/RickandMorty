@@ -25,14 +25,13 @@ const characterReducer = (state = initialState, action) => {
 export const setCharacter = (character) => ({ type: SET_CHARACTER, character });
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 
-export const getCharacter = (id) => {
-    return async (dispatch) => {
+export const requestCharacter = (id) => async (dispatch) =>  {
         dispatch(toggleIsFetching(true))
 
         let response = await characterAPI.getCharacter(id);
         dispatch(setCharacter(response))
         dispatch(toggleIsFetching(false));
-    }
+    
 }
 
 export default characterReducer;

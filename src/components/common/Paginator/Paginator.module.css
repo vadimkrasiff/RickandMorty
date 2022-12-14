@@ -12,7 +12,7 @@
     height: 25px;
     padding: 5px;
     margin-left: 2px;    
-    width: 25px;
+    width: 35px;
     transition: .2s;
     border-radius: 3px;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.507), 0 0 5px rgba(0, 0, 0, 0.473);
@@ -32,7 +32,7 @@
     align-items: center;
     height: 25px;
     padding: 5px;    
-    width: 25px;
+    width: 35px;
     background-color: #42B4CA;
     border-radius: 3px;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.26), 0 0 4px rgba(0, 0, 0, 0.26);

@@ -50,10 +50,11 @@ export const requestFooter = () => async (dispatch) => {
     let charactersData = await charactersAPI.getCharacters();
     let locationsData = await locationsAPI.getLocation();
     let episodesData = await episodeAPI.getEpisode();
-    dispatch(toggleIsFetching(false));
     dispatch(setTotalCharactersCount(charactersData.info.count));
     dispatch(setTotalLocationsCount(locationsData.info.count));
     dispatch(setTotalEpisodesCount(episodesData.info.count));
+    
+    dispatch(toggleIsFetching(false));
 }
 
 export default FooterReducer;

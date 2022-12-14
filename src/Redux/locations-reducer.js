@@ -44,10 +44,11 @@ export const requestLocations = (page) => {
         dispatch(toggleIsFetching(true));
         
         let data = await locationsAPI.getLocation(page);
-        dispatch(toggleIsFetching(false));
+        
         dispatch(setLocations(data.results));
         dispatch(setTotalPagesCount(data.info.pages));
         dispatch(setTotalLocationsCount(data.info.count));
+        dispatch(toggleIsFetching(false));
     }
 }
 

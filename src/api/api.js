@@ -46,20 +46,21 @@ export const episodeAPI = {
 }
 
 export const SearchAPI = {
-    async getCharacters () {
-        const response = await instance.get(`character`);
+    async getCharacters (page = 1) {
+        const response = await instance.get(`character?page=${page}`);
         return response.data;
     },
-    async getLocations () {
-        return instance.get(`location`)
+    async getLocations (page = 1) {
+        return instance.get(`location?page=${page}`)
         .then(response => {
             return response.data;
         })
     },
-    async getEpisodes () {
-        return instance.get(`episode`)
+    async getEpisodes (page = 1) {
+        return instance.get(`episode?page=${page}`)
         .then(response => {
             return response.data;
         })
     }
+
 }

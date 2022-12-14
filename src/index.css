@@ -15,6 +15,10 @@ body {
   /* background-color: #1F2D47; */
 
 }
+/* 
+body::-webkit-scrollbar {
+  width: 0px;
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -1,15 +1,20 @@
-export const getLocations = (state) => {
-    return state.header.locations;
+export const getLocation = (state) => {
+    return state.searh.locations;
 };
 
 export const getCharacters = (state) => {
-    return state.header.characters;
+    return state.searh.characters;
 };
 
-export const getEpisodes = (state) => {
-    return state.header.episodies;
+export const getEpisode = (state) => {
+    return state.searh.episodes;
 };
+
+export const getData = (state) => {
+    return state.searh.data;
+};
+
 
 export const getIsFetching = (state) => {
-    return state.header.isFetching;
+    return state.searh.isFetching;
 };

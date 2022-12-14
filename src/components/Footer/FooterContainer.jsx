@@ -8,7 +8,7 @@ import { requestFooter } from "../../Redux/footer-reducer";
 let FooterContainer = (props) => {
 
     return <div>
-        {props.isFetching || props.locationsCount == null ? null :
+        {props.isFetching == true ? null :
                 <Footer locationsCount={props.locationsCount}
                 charactersCount={props.charactersCount}
                 episodesCount={props.episodesCount} />

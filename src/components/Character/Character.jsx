@@ -44,7 +44,7 @@ let Character = ({ character }) => {
         </div>
         <div className={cssChr.rightInfo}>
             <div className={cssChr.titleRight}>JSON character</div>
-            <div className={cssChr.json}>{ JSON.stringify(character, null, 2)}</div>
+            {/* <div className={cssChr.json}>{ JSON.stringify(character, null, 2)}</div> */}
         </div>
     </div>
 }

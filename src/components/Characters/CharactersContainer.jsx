@@ -13,14 +13,14 @@ let CharactersContainer = (props) => {
 
     const { currentPage } = useParams();
     useEffect(() => {
-        props.getCharacters(currentPage)
+        props.requestCharacters(currentPage)
     }, [currentPage])
 
         return <div className={css.container}>
-            {props.characters == null || props.isFetching ? <Preloader /> :
+            {props.characters == null || props.isFetching == true ? <Preloader /> :
                     <Characters characters={props.characters}
                         totalPagesCount={props.totalPagesCount}
-                        currentPage={props.currentPage}
+                        currentPage={currentPage}
                         namePage={props.namePage} />
             }
         </div>
@@ -37,5 +37,5 @@ let mapStateToProps = (state) => {
 
 export default compose(
     connect(mapStateToProps,
-        { getCharacters: requestCharacters })
+        { requestCharacters })
 )(CharactersContainer);

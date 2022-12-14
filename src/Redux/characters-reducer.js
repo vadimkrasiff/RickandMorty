@@ -24,24 +24,25 @@ let charactersReducer = (state = initialState, action) => {
                 isFetching: action.isFetching
             };
         case SET_TOTAL_PAGES_COUNT:
-            return {...state, totalPagesCount: action.count};
+            return { ...state, totalPagesCount: action.count };
         default:
             return state;
     }
 }
 
-export const setCharacters = (characters) => ({type: GET_CHARACTERS, characters});
-export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
-export const setTotalPagesCount = (totalPagesCount) => ({type: SET_TOTAL_PAGES_COUNT, count: totalPagesCount});
+export const setCharacters = (characters) => ({ type: GET_CHARACTERS, characters });
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
+export const setTotalPagesCount = (totalPagesCount) => ({ type: SET_TOTAL_PAGES_COUNT, count: totalPagesCount });
 
 export const requestCharacters = (page) => {
     return async (dispatch) => {
         dispatch(toggleIsFetching(true));
-
+        
         let data = await charactersAPI.getCharacters(page);
-        dispatch(toggleIsFetching(false));
         dispatch(setCharacters(data.results));
         dispatch(setTotalPagesCount(data.info.pages));
+
+        dispatch(toggleIsFetching(false));
     }
 }
 

@@ -17,10 +17,10 @@ let LocationsContainer = (props) => {
     }, [currentPage])
 
         return <div className={css.container}>
-            {props.locations == null || props.isFetching ? <Preloader /> :
+            {props.locations == null || props.isFetching? <Preloader /> :
                     <Locations locations={props.locations}
                         totalPagesCount={props.totalPagesCount}
-                        currentPage={props.currentPage}
+                        currentPage={currentPage}
                         namePage={props.namePage} />
             }
         </div>

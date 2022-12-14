@@ -1,0 +1,40 @@
+.searh{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.results {
+    width: 1280px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+}
+
+.preloader {
+    width: 1280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.result {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    width: 280px;
+    height: 130px;
+    border-radius: 10px;
+}
+
+.result .url {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.479);
+}
+
+.name:hover {
+    color: rgb(255, 152, 0);
+    transition: .2s;
+}

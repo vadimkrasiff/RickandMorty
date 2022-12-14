@@ -17,10 +17,10 @@ let EpisodesContainer = (props) => {
     }, [currentPage])
 
         return <div className={css.container}>
-            {props.episodes == null || props.isFetching ? <Preloader /> :
+            {props.episodes == null || props.isFetching == true ? <Preloader /> :
                     <Episodes episodes={props.episodes}
                         totalPagesCount={props.totalPagesCount}
-                        currentPage={props.currentPage}
+                        currentPage={currentPage}
                         namePage={props.namePage} />
             }
         </div>
@@ -31,7 +31,6 @@ let mapStateToProps = (state) =>  {
         episodes: getEpisodes(state),
         isFetching: getIsFetching(state),
         totalPagesCount: getTotalPagesCount(state),
-        currentPage: getCurrentPage(state),
         namePage: getNamePage(state),
     }
 };

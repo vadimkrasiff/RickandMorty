@@ -11,6 +11,7 @@ import CharacterContainer from './components/Character/CharacterContainer';
 import FooterContainer from './components/Footer/FooterContainer';
 import LocationsContainer from './components/Locations/LocationsContainer';
 import EpisodesContainer from './components/Episodes/EpisodesContainer';
+import SearchPage from './components/SearchPage/SearchPage';
 // const CharactersContainer = React.lazy(() => import('./components/Characters/CharactersContainer'))
 
 
@@ -24,6 +25,7 @@ let App = () => {
         <Header />
         <div className='App'>
           <Routes>
+          <Route path='/search&page=:currentPage' element={<div><SearchPage /> </div>} />
             <Route path='/character/:id' element={<div><CharacterContainer /> </div>} />
             <Route path='/characters&page=:currentPage' element={<div><CharactersContainer /></div>} />
             <Route path='/locations&page=:currentPage' element={<div><LocationsContainer /></div>} />
