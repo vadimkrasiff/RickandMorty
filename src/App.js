@@ -25,7 +25,7 @@ let App = () => {
         <Header />
         <div className='App'>
           <Routes>
-          <Route path='/search&page=:currentPage' element={<div><SearchPage /> </div>} />
+          <Route path='/search&text=:textSearch&page=:currentPage' element={<div><SearchPage /> </div>} />
             <Route path='/character/:id' element={<div><CharacterContainer /> </div>} />
             <Route path='/characters&page=:currentPage' element={<div><CharactersContainer /></div>} />
             <Route path='/locations&page=:currentPage' element={<div><LocationsContainer /></div>} />

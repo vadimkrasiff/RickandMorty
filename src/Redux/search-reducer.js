@@ -8,10 +8,7 @@ const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 let initialState = {
     isFetching: true,
-    characters: [],
-    locations: [],
-    episodes: [],
-    data: [[]],
+    data: [],
 }
 
 let SearchReducer = (state = initialState, action) => {
@@ -21,25 +18,10 @@ let SearchReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: action.isFetching
             };
-        case GET_CHARACTERS:
-            return {
-                ...state,
-                characters: action.characters
-            };
-        case GET_LOCATION:
-            return {
-                ...state,
-                locations: action.locations
-            };
-        case GET_EPISODE:
-            return {
-                ...state,
-                episodes: action.episodes
-            };
         case GET_DATA:
         return {
             ...state,
-            data: action.data
+            data: [...state.data,  ...action.data]
         };
         default:
             return state;
@@ -47,10 +29,7 @@ let SearchReducer = (state = initialState, action) => {
 }
 
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
-export const setCharacters = (characters) => ({ type: GET_CHARACTERS, characters: characters });
-export const setLocations = (locations) => ({ type: GET_LOCATION, locations: locations });
-export const setEpisodes = (episodes) => ({ type: GET_EPISODE, episodes: episodes });
-export const setData = (data) => ({ type: GET_EPISODE, data });
+export const setData = (data) => ({ type: GET_DATA, data });
     
 export const requestSearch = (page= 1) => async (dispatch) => {
     dispatch(toggleIsFetching(true));
@@ -63,7 +42,7 @@ export const requestSearch = (page= 1) => async (dispatch) => {
         let dataArray = [];
         for(let i = 1; i<= count; i++) {
             let data = await request(i);
-        data.results.map((e) => {
+        data.results.forEach((e) => {
             dataArray.push({id: e.id, name: e.name, url: url})
         })
     }
@@ -71,9 +50,9 @@ export const requestSearch = (page= 1) => async (dispatch) => {
     }
     
 
-    cycleRequest(SearchAPI.getLocations, setLocations,  'location', locationsData.info.pages);
-    cycleRequest(SearchAPI.getCharacters, setCharacters, 'character', charactersData.info.pages);
-    cycleRequest(SearchAPI.getEpisodes, setEpisodes, 'episode', episodesData.info.pages); 
+    cycleRequest(SearchAPI.getLocations, setData,  'location', locationsData.info.pages);
+    cycleRequest(SearchAPI.getCharacters, setData, 'character', charactersData.info.pages);
+    cycleRequest(SearchAPI.getEpisodes, setData, 'episode', episodesData.info.pages); 
 
     dispatch(toggleIsFetching(false));
 }

@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     width: 300px;
-    height: 200px;
+    height: 110px;
     text-decoration-color: unset;
     color: #282c34;
     transition: .2s;
@@ -33,7 +33,7 @@
     justify-content: start;
     align-items: center;
     transition: .2s;
-    height: 10vh;
+    height: 100%;
 }
 
 .header .logo a {
@@ -43,7 +43,7 @@
     font-size: 32px;
     transition: .2s;
     background-size: 100% 100%;
-    height: 200px;
+    height: 110px;
     width: 300px;
     transition: .2s;
 }

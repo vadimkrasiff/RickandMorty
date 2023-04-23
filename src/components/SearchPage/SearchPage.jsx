@@ -10,27 +10,30 @@ import Preloader from "../common/Preloader/Preloader";
 import css from "./SearchPage.module.css";
 
 let SearchPage = ({ data, ...props }) => {
-    const { currentPage } = useParams();
+    const { currentPage, textSearch } = useParams();
     useEffect(() => {
-    }, [currentPage])
-
+    }, [currentPage]);
+    console.log(currentPage);
         useEffect(()=>{},[currentPage]);
+
+    let filterData = data.filter((el, index) => {
+          return el.name.toLowerCase().includes(textSearch == " "? '': textSearch)});
     return <div className={css.searh}>
-        {(data.length == 0) || data[0].length == 0? <div >
+        {(data.length == 0) ? <div >
         <div>Found: None</div>
         <div className={css.preloader}><Preloader /></div>
             
         </div> :
             <div>
-                <div>Found: {data.length * 20 - (20 - data[data.length - 1].length)}</div>
+                <div>Found: {filterData.length }</div>
                 <div className={css.results}>
-                    {data[currentPage-1].map((d) => <div className={css.result} >
+                    {filterData.map((d, i) => {if(i <= 20*currentPage && i > (currentPage-1)*20) return <div className={css.result} >
                         <NavLink to={`/${d.url}/${d.id}`} className={css.name}>{d.name}</NavLink>
                         <div className={css.url}>{d.url}</div>
-                    </div>)}
+                    </div>})}
                 </div>
             </div>}
-        <Paginator totalPagesCount={data.length} currentPage={currentPage} namePage={`search&page=`} />
+        <Paginator totalPagesCount={Math.ceil(filterData.length/20)} currentPage={currentPage} namePage={`search&text=${textSearch}&page=`} />
 
     </div>
 

@@ -5,7 +5,7 @@ import Search from '../common/Search/Search';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { requestSearch } from '../../Redux/search-reducer';
-import { getCharacters, getEpisode, getIsFetching, getLocation } from '../../Redux/search-selectors';
+import { getIsFetching } from '../../Redux/search-selectors';
 
 let Header = () => {
 
@@ -36,13 +36,8 @@ let Header = () => {
 
 let mapStateToProps = (state) => {
     return {
-        characters: getCharacters(state),
-        locations: getLocation(state),
-        episodes: getEpisode(state),
         isFetching: getIsFetching(state),
     }
 };
 
-export default compose(
-    connect(mapStateToProps, requestSearch),
-)(Header);
+export default connect(mapStateToProps, requestSearch)(Header);
