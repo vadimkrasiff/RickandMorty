@@ -1,3 +1,5 @@
+#Приложение "Энциклопедия по мультсериалу Rick and Morty"
+Фишка - поисковая система на стороне фронта: так как в апи не было возможности поиска, поиск был разработан на фронта  
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
